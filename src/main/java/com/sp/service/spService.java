@@ -15,7 +15,7 @@ import com.sp.utils.JaxbUtil.CollectionWrapper;
 public class spService implements IspService {
 
 	//测试接口地址
-	private static final String _point = "http://www.starpost.cn:9070/spservice/ws/spservice?wsdl";
+	private static final String _point = "https://api.starpost.cn/spservice/ws/spservice?wsdl";
 
 	private static JaxbUtil requestBinder = new JaxbUtil(RequestModel.class,
 			CollectionWrapper.class);

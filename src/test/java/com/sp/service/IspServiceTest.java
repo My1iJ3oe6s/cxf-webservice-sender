@@ -22,8 +22,8 @@ public class IspServiceTest {
 		List<OrderDTO> orderList = createOrder(1);
 		RequestModel req = new RequestModel();
 		req.setLang("zh-CN");//en-US
-		req.setHead("80010000");//测试账号
-		String token = "47EC2DD791E31E2EF2076CAF64ED9B3D";
+		req.setHead("80011313");//测试账号
+		String token = "6C9ED2908539264BF221209FAEF9DF7E";
 		
 		RequestBodyModel orderBody = new RequestBodyModel();
 		orderBody.setOrderList(orderList);
@@ -32,6 +32,7 @@ public class IspServiceTest {
 		try {
 			OrderResponseDTO respDTO= null;
 			ResponseModel orderResp = service.createOrder(req, token);
+			
 			if(orderResp != null){
 				for(int i=0;i<orderResp.getBody().getOrderResponse().size();i++){
 					respDTO = orderResp.getBody().getOrderResponse().get(i);
@@ -51,13 +52,13 @@ public class IspServiceTest {
 		RequestModel req = new RequestModel();
 		req.setLang("zh-CN");//en-US
 		req.setHead("80010000");//测试账号
-		String token = "47EC2DD791E31E2EF2076CAF64ED9B3D";
+		String token = "SDW2SD5FS76WEC";
 		
 		RequestBodyModel orderBody = new RequestBodyModel();
 		orderBody.setOrderList(orderList);
 		req.setBody(orderBody);
 		
-		try {
+		try {                    
 			OrderResponseDTO respDTO= null;
 			ResponseModel orderResp = service.batchCreateOrder(req, token);
 			if(orderResp != null){
@@ -75,7 +76,7 @@ public class IspServiceTest {
 		List<OrderDTO> orderList = new ArrayList<OrderDTO>();
 		for (int i = 0; i < _count; i++) {
 			OrderDTO o = new OrderDTO();
-			o.setRef_number(System.currentTimeMillis()+StringUtils.EMPTY+i);
+			o.setRef_number(System.currentTimeMillis()+StringUtils.EMPTY+i+"Test");
 			o.setExpress_code("UKPS5");
 			o.setBuyer_id("ahmedasas");
 			o.setBuyer_email("");

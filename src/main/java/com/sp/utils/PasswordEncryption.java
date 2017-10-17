@@ -3,6 +3,8 @@ package com.sp.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.xml.bind.DatatypeConverter;
+
 public class PasswordEncryption {
 
 	/**
@@ -51,7 +53,7 @@ public class PasswordEncryption {
 	 */
 	public static String byte2hex(byte[] b) {
 
-		String hs = "";
+		/*String hs = "";
 		String stmp = "";
 		for (int n = 0; n < b.length; n++) {
 			stmp = (java.lang.Integer.toHexString(b[n] & 0XFF));
@@ -60,8 +62,9 @@ public class PasswordEncryption {
 			} else {
 				hs = hs + stmp;
 			}
-		}
-		return hs.toUpperCase();
+		}*/
+		//return hs.toUpperCase();
+		return DatatypeConverter.printHexBinary(b);
 	}
 
 }
